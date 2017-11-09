@@ -1,0 +1,16 @@
+﻿Build started 19.10.2017 13:52:07.
+     1>Project "D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\test_bitfield\test_bitfield.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\Release\test_bitfield.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:../Release gtest.lib bitfield.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\Release\test_bitfield.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\Release\test_bitfield.lib" /MACHINE:X86 /SAFESEH Release\test_main.obj
+         Release\test_tbitfield.obj
+         Release\test_tset.obj
+         "D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\Release\gtest.lib"
+         "D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\Release\bitfield.lib"
+     1>bitfield.lib(tbitfield.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1700' doesn't match value '1800' in test_main.obj
+     1>msvcprt.lib(newaop_s.obj) : error LNK2038: mismatch detected for '_MSC_VER': value '1700' doesn't match value '1800' in test_main.obj
+     1>D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\Release\test_bitfield.exe : fatal error LNK1319: 2 mismatches detected
+     1>Done Building Project "D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\test_bitfield\test_bitfield.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.96

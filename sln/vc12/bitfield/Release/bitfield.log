@@ -1,0 +1,19 @@
+﻿Build started 19.10.2017 13:52:03.
+     1>Project "D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\bitfield\bitfield.vcxproj" on node 3 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /I../../../include /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt ..\..\..\src\tbitfield.cpp
+         tbitfield.cpp
+     1>..\..\..\src\tbitfield.cpp(156): warning C4800: 'int' : forcing value to bool 'true' or 'false' (performance warning)
+     1>..\..\..\src\tbitfield.cpp(198): error C2446: '<' : no conversion from 'void *' to 'int'
+                 There is no context in which this conversion is possible
+     1>..\..\..\src\tbitfield.cpp(198): error C2040: '<' : 'int' differs in levels of indirection from 'void *'
+     1>..\..\..\src\tbitfield.cpp(201): error C2274: '->' : illegal as right side of '.' operator
+     1>..\..\..\src\tbitfield.cpp(205): error C2274: '->' : illegal as right side of '.' operator
+     1>..\..\..\src\tbitfield.cpp(212): error C2274: '->' : illegal as right side of '.' operator
+     1>..\..\..\src\tbitfield.cpp(215): error C3672: pseudo-destructor expression can only be used as part of a function call
+     1>..\..\..\src\tbitfield.cpp(237): warning C4018: '>' : signed/unsigned mismatch
+     1>Done Building Project "D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\bitfield\bitfield.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:03.40

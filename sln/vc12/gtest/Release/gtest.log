@@ -1,0 +1,9 @@
+﻿Build started 19.10.2017 13:52:03.
+     1>Project "D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\gtest\gtest.vcxproj" on node 2 (Build target(s)).
+     1>Lib:
+         gtest.vcxproj -> D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\Release\gtest.lib
+     1>Done Building Project "D:\Университет\ЯИМП\mp2-lab1-set-master\sln\vc12\gtest\gtest.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.14

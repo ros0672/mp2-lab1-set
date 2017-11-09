@@ -50,6 +50,23 @@ TEST(TBitField, can_clear_bit)
   EXPECT_EQ(0, bf.GetBit(bitIdx));
 }
 
+
+TEST(TBitField, bitfields_with_different_bits_are_not_equal)
+{
+	const int size = 4;
+	TBitField bf1(size), bf2(size);
+
+	bf1.SetBit(1);
+	bf1.SetBit(3);
+
+	bf2.SetBit(1);
+	bf2.SetBit(2);
+
+	int res = (bf1 == bf2);
+
+	EXPECT_NE(1, res);
+}
+
 TEST(TBitField, throws_when_create_bitfield_with_negative_length)
 {
   ASSERT_ANY_THROW(TBitField bf(-3));
@@ -218,9 +235,11 @@ TEST(TBitField, and_operator_applied_to_bitfields_of_non_equal_size)
   bf2.SetBit(3);
 
   // expBf = 00010
+  expBf.SetBit(1);
+  expBf.SetBit(2);
   expBf.SetBit(3);
 
-  EXPECT_EQ(expBf, bf1 & bf2);
+  EXPECT_EQ(expBf, bf1 | bf2);
 }
 
 TEST(TBitField, can_invert_bitfield)
@@ -246,28 +265,11 @@ TEST(TBitField, can_invert_large_bitfield)
 
   for(int i = 0; i < size; i++)
     expNegBf.SetBit(i);
-  expNegBf.ClrBit(35);
+  for (int i = 35; i < size; i++)
+	expNegBf.ClrBit(i);
 
+  //correction: expNegBf.ClrBit(35);expNegBf.ClrBit(35);
   EXPECT_EQ(expNegBf, negBf);
-}
-
-TEST(TBitField, invert_plus_and_operator_on_different_size_bitfield)
-{
-  const int firstSze = 4, secondSize = 8;
-  TBitField firstBf(firstSze), negFirstBf(firstSze), secondBf(secondSize), testBf(secondSize);
-  // firstBf = 0001
-  firstBf.SetBit(0);
-  negFirstBf = ~firstBf;
-  // negFirstBf = 1110
-
-  // secondBf = 00011000
-  secondBf.SetBit(3);
-  secondBf.SetBit(4);
-
-  // testBf = 00001000
-  testBf.SetBit(3);
-
-  EXPECT_EQ(secondBf & negFirstBf, testBf);
 }
 
 TEST(TBitField, can_invert_many_random_bits_bitfield)
@@ -296,31 +298,4 @@ TEST(TBitField, can_invert_many_random_bits_bitfield)
   EXPECT_EQ(expNegBf, negBf);
 }
 
-TEST(TBitField, bitfields_with_different_bits_are_not_equal)
-{
-  const int size = 4;
-  TBitField bf1(size), bf2(size);
 
-  bf1.SetBit(1);
-  bf1.SetBit(3);
-
-  bf2.SetBit(1);
-  bf2.SetBit(2);
-
-  EXPECT_NE(bf1, bf2);
-}
-
-
-TEST(TBitField, bitfields_with_different_bits_are_not_equal_big_sizes)
-{
-  const int size = 100;
-  TBitField bf1(size), bf2(size);
-
-  bf1.SetBit(1);
-  bf1.SetBit(90);
-
-  bf2.SetBit(1);
-  bf2.SetBit(45);
-
-  EXPECT_NE(bf1, bf2);
-}
